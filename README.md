@@ -1,5 +1,5 @@
 # git-practice
-# ![HW1](https://lightda-tw.notion.site/20240912-W01-1-3e6313f8703846fd99d59d78aff03d27)
+# [HW1](https://lightda-tw.notion.site/20240912-W01-1-3e6313f8703846fd99d59d78aff03d27)
 
 
 ## 9/12 課程心得
