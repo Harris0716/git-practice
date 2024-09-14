@@ -31,7 +31,7 @@ head 是git 指向當前工作位置的指標，可用來決定commit時應更�
 `git log -1` 可用來查看當前的head指向的位置
 
 # 紀錄在 git repo 操作過程中，.git 檔案夾裡的變化，看看你可以觀察到什麼
-新增1個檔案時，並執行git add .，會更改.git/index檔案的內容， git commit -m "xxx"後，.git資料夾中的objects中，會產生兩個hash，一個用來紀錄blob，一個用來紀錄tree，head會指向新的commit
+新增1個檔案時，並執行git add .，會更改.git/index檔案的內容， git commit -m "xxx"後，.git/objects中，會產生兩個hash，一個用來紀錄blob，一個用來紀錄tree，head會指向新的commit
 
 
 
