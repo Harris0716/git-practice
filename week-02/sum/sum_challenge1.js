@@ -35,5 +35,5 @@ function sum_foreach(ary) {
     });
     return s;
 }
-
+// test
 console.log(sum_tail([1, 5, 3, 2])); // 11
