@@ -40,7 +40,7 @@ npm 是 Node.js的套件管理工具 (像是Python中的pip)
 - 產生 node_modules 資料夾
 - 產生 package-lock.json
 - package.json多了dependencies屬性
-![alt text](images/type_moudle.png)
+![alt text](images/dependencies.png)
 
 ### node_modules 資料夾
 node_modules中會包含套件的所有檔案，所以可能非常龐大，
