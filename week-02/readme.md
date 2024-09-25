@@ -35,8 +35,9 @@ npm 是 Node.js的套件管理工具 (像是Python中的pip)
 完成後可以在專案資料夾找到package.json
 ![alt text](images/package.png)
 3. 安裝套件(以nodemon為例)
-`npm install nodemon`
-這時候專案資料夾產生了一些變化
+- `npm install -g nodemon` (如果安裝在某個node版本)
+- `npm install nodemon` (如果只有安裝在某個專案資料夾)
+安裝在專案資料夾的話，這時候資料夾中會產生了一些變化
 - 產生 node_modules 資料夾
 - 產生 package-lock.json
 - package.json多了dependencies屬性
