@@ -92,7 +92,7 @@ console.log(subtract(3, 2)); // 1
 ```
 
 ### ESM
-使用ESM時，需先在package.json中加上 `"type":module;`
+使用ESM時，需先在package.json中加上 `"type":module;` <br>
 ![alt text](images/typemodule.png)
 
 ESM 使用 import / export 來引入與匯出模組
@@ -136,13 +136,13 @@ curl https://www.google.com.tw/
 ![alt text](images/noparam.png)
 
 ## -o 
-`curl https://example.com -o output.html`
+`curl https://example.com -o output.html` <br>
 可將網頁的 html 原始碼下載下來
 ![alt text](images/o.png)
 
 ## -L
 - 未加上 -L 
-`curl https://shorturl.at/gfvr2`
+`curl https://shorturl.at/gfvr2` <br>
 如果是縮網址的話，可能會回應 301 重新導向 
 ![alt text](images/no-L.png)
 
@@ -154,13 +154,13 @@ curl https://www.google.com.tw/
 
 
 ## -I
-`curl -I https://example.com`
+`curl -I https://example.com` <br>
 獲得 header 資訊
 ![alt text](images/i.png)
 
 
 ## -d
-`curl -d "param1=value1&param2=value2" https://example.com`
+`curl -d "param1=value1&param2=value2" https://example.com` <br>
 使用`POST`方法 傳遞參數，常用於表單提交
 
 補充: 與 curl https://example.com/param1=value1&param2=value2 不同，這個指令是發送一個 `GET` 請求，如果是傳遞密碼等敏感資訊不宜用`GET`方法，密碼會直接顯示於網址，應使用`POST`
