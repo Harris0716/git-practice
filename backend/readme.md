@@ -60,7 +60,7 @@ app.listen(port, () => {
 
 
 - 不應上傳的檔案
-1. 敏感性資料，如：密碼、APT token
+1. 敏感性資料，如：密碼、API token
 2. 依賴套件 (使用者自行下載即可)，如果上傳到 github repo 會佔用空間
 3. 開發者IDE的資訊，如：.vscode, .idea
 
