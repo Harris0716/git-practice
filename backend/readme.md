@@ -31,8 +31,9 @@ script-name 可填入上面例子的 start, build, test, lint,...等
 `npm install dotenv`
 2. 建立 `.env `檔案，裡面加上`PORT=3000`
 ![alt text](images/port.png)
-3.
+3. 
 ```javascript
+// 使用 ESM
 import dotenv from 'dotenv';
 
 dotenv.config(); // 載入環境變數
@@ -99,7 +100,7 @@ console.log(subtract(3, 2)); // 1
 ```
 
 ### ESM
-使用ESM時，需先在package.json中加上 `"type":module;` <br>
+使用ESM時，需先在package.json中加上 `"type":module;`
 ![alt text](images/typemodule.png)
 
 ESM 使用 import / export 來引入與匯出模組
