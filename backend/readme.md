@@ -59,12 +59,63 @@ app.listen(port, () => {
 
 
 # 5. 範例程式中用 require，但上週的 Stack 是用 import/export，這兩種分別是 JavaScript 引用模組的兩種方式: CJS vs ESM，這兩者分別怎麼用？
-CJS（CommonJS）和 ESM（ECMAScript Modules）是 JavaScript 中的兩種Module system，
+CJS（CommonJS）和 ESM（ECMAScript Modules）是 JavaScript 中的兩種模組系統(module system)。
 
+- CJS 的特點是同步加載，意思是程式會等模組加載完畢後才會執行，但如果模組容量很大，加載會很沒效率，主要用於node.js環境，並且為預設的模組系統。
 
+- ESM 使用非同步加載，因此比 CJS 有效率，現代的瀏覽器與 node.js 都有支援。
 
+## CJS 與 ESM 的使用範例
+### CJS
+CJS 使用 require / module.exports 來引入與匯出模組
 
+``` javascript
+// math.js
+function add(a, b) {
+    return a + b;
+}
 
+function subtract(a, b) {
+    return a - b;
+}
+
+module.exports = {
+    add,
+    subtract
+};
+```
+```javascript
+// app.js
+const math = require('./math'); //不需要寫math.js
+console.log(add(3, 5)); // 8
+console.log(subtract(3, 2)); // 1
+```
+
+### ESM
+使用ESM時，需先在package.json中加上 `"type":module;`
+![alt text](images/typemodule.png)
+
+ESM 使用 import / export 來引入與匯出模組
+
+```javascript
+// math.js
+export function add(a, b) {
+    return a + b;
+}
+
+export function subtract(a, b){
+  return a - b;
+}
+```
+
+```javascript
+// app.js
+import { add, subtract } from './math.js';
+
+console.log(add(2, 3)); // 5
+console.log(subtract(4, 2)); // 2
+
+```
 
 # 6. 進階題:
 ## 6.1 [localhost](http://localhost) 是什麼？
@@ -105,7 +156,7 @@ curl https://www.google.com.tw/
 ## -I
 `curl -I https://example.com`
 獲得 header 資訊
-![alt text](image.png)
+![alt text](images/i.png)
 
 
 ## -d
