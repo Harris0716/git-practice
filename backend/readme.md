@@ -29,7 +29,7 @@ script-name 可填入上面例子的 start, build, test, lint,...等
 可以透過修改 process.env 來設定環境變數，以下範例示範如何把Port number改為3000
 1. 安裝 dotenv
 `npm install dotenv`
-2. 建立 `.env `檔案，裡面加上`PORT=3000`
+2. 建立 `.env `檔案，裡面加上`PORT=3000` <br>
 ![alt text](images/port.png)
 3. 
 ```javascript
@@ -100,7 +100,7 @@ console.log(subtract(3, 2)); // 1
 ```
 
 ### ESM
-使用ESM時，需先在package.json中加上 `"type":module;`
+使用ESM時，需先在package.json中加上 `"type":module;` <br>
 ![alt text](images/typemodule.png)
 
 ESM 使用 import / export 來引入與匯出模組
