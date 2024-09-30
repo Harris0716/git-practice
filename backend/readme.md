@@ -26,7 +26,7 @@ script-name 可填入上面例子的 start, build, test, lint,...等
 
 
 # 3. Port number 要怎麼以環境變數來設定？
-可以透過修改 process.env 來設定環境變數
+可以透過修改 process.env 來設定環境變數 <br>
 以下是範例程式
 ``` javascript
 const express = require('express');
@@ -127,7 +127,7 @@ host 代表 server (伺服器)，建立 localhost 相當於在本機上建立伺
 ## 6.2 `curl` 是什麼？查查看怎麼用 curl 來測試網路連線？常用參數有哪些？
 
 `curl` 代表 Client URL，是 CLI 工具，可讓使用者以 CLI 與 各種協定的伺服器 (http, https, ftp) 進行通訊，可用以分析網頁。
-以下是常見的參數：
+以下是常見的參數： <br>
 window 的 CLI 不一定適用，我是用 WSL
 
 ## 不加參數
