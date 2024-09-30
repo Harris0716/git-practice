@@ -26,14 +26,21 @@ script-name 可填入上面例子的 start, build, test, lint,...等
 
 
 # 3. Port number 要怎麼以環境變數來設定？
-可以透過修改 process.env 來設定環境變數 <br>
-以下是範例程式
-``` javascript
-const express = require('express');
-const app = express();
+可以透過修改 process.env 來設定環境變數，以下範例示範如何把Port number改為3000
+1. 安裝 dotenv
+`npm install dotenv`
+2. 建立 `.env `檔案，裡面加上`PORT=3000`
+![alt text](images/port.png)
+3.
+```javascript
+import dotenv from 'dotenv';
 
-const port = process.env.PORT || 3000;
-// 如果 process.env.PORT 沒有值 (為NULL 或 undefined)，則設為3000
+dotenv.config(); // 載入環境變數
+
+const port = process.env.PORT || 3000; // 使用 .env 中的 PORT，預設為 3000
+
+const express = await import('express');
+const app = express();
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
@@ -52,7 +59,7 @@ app.listen(port, () => {
 
 
 - 不應上傳的檔案
-1. 敏感性資料，如：密碼、API token
+1. 敏感性資料，如：密碼、APT token
 2. 依賴套件 (使用者自行下載即可)，如果上傳到 github repo 會佔用空間
 3. 開發者IDE的資訊，如：.vscode, .idea
 
@@ -92,7 +99,7 @@ console.log(subtract(3, 2)); // 1
 ```
 
 ### ESM
-使用ESM時，需先在package.json中加上 `"type":module;` <br>
+使用ESM時，需先在package.json中加上 `"type":module;`
 ![alt text](images/typemodule.png)
 
 ESM 使用 import / export 來引入與匯出模組
@@ -127,40 +134,42 @@ host 代表 server (伺服器)，建立 localhost 相當於在本機上建立伺
 ## 6.2 `curl` 是什麼？查查看怎麼用 curl 來測試網路連線？常用參數有哪些？
 
 `curl` 代表 Client URL，是 CLI 工具，可讓使用者以 CLI 與 各種協定的伺服器 (http, https, ftp) 進行通訊，可用以分析網頁。
-以下是常見的參數： <br>
+以下是常見的參數：
 window 的 CLI 不一定適用，我是用 WSL
 
 ## 不加參數
-curl https://www.google.com.tw/
+`curl https://www.google.com.tw/`
 直接印出網頁原始碼
 ![alt text](images/noparam.png)
 
 ## -o 
-`curl https://example.com -o output.html` <br>
+`curl https://example.com -o output.html`
 可將網頁的 html 原始碼下載下來
 ![alt text](images/o.png)
 
 ## -L
 - 未加上 -L 
-`curl https://shorturl.at/gfvr2` <br>
+`curl https://shorturl.at/gfvr2`
 如果是縮網址的話，可能會回應 301 重新導向 
 ![alt text](images/no-L.png)
 
 <br>
 - 加上 -L
+
 `curl -L https://shorturl.at/gfvr2`
 加上-L後就可以印出原始碼
+
 ![alt text](images/L.png)
 
 
 ## -I
-`curl -I https://example.com` <br>
+`curl -I https://example.com`
 獲得 header 資訊
 ![alt text](images/i.png)
 
 
 ## -d
-`curl -d "param1=value1&param2=value2" https://example.com` <br>
+`curl -d "param1=value1&param2=value2" https://example.com`
 使用`POST`方法 傳遞參數，常用於表單提交
 
-補充: 與 curl https://example.com/param1=value1&param2=value2 不同，這個指令是發送一個 `GET` 請求，如果是傳遞密碼等敏感資訊不宜用`GET`方法，密碼會直接顯示於網址，應使用`POST`
+補充: 與 `curl https://example.com/param1=value1&param2=value2 `不同，這個指令是發送一個 `GET` 請求，如果是傳遞密碼等敏感資訊不宜用`GET`方法，密碼會直接顯示於網址，應使用`POST`
