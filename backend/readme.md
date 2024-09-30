@@ -99,7 +99,7 @@ console.log(subtract(3, 2)); // 1
 ```
 
 ### ESM
-使用ESM時，需先在package.json中加上 `"type":module;`
+使用ESM時，需先在package.json中加上 `"type":module;` <br>
 ![alt text](images/typemodule.png)
 
 ESM 使用 import / export 來引入與匯出模組
