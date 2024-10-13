@@ -12,12 +12,12 @@ Ans: Nginx 是一個反向代理器，可把接收到的 requests 分配到其�
 ## 4. pm2 套件是什麼？有什麼用處？
 Ans: pm2 像是個 **工作管理員**，管理各種 **node.js 的程式**，
 輸入 `pm2 list`，會顯示當前執行的程式。
-![alt text](images/image.png)
+![alt text](images/pm2_list.png)
 
-一般來說，要輸入 `node app.js` 才能啟動伺服器，但他會一直 listen，沒辦法用這個 terminal 輸入其他的指令。
-![alt text](images/messageImage_1728579221404.jpg)
+一般來說，要輸入 `node app.js` 才能啟動伺服器，但他會一直 listening，沒辦法用這個 terminal 輸入其他的指令。
+![alt text](images/listen_on_3000.jpg)
 pm2 可以讓程式 **背景執行** ，輸入 `pm2 start app.js` 可以啟動伺服器，
-![alt text](images/image-2.png)
+![alt text](images/pm2_start_app.png)
 這樣就不會一直佔用 terminal
 
 
@@ -31,7 +31,7 @@ proxy 是代理的意思，分為反向代理 (Reverse proxy) 及 正向代理 (
 
 
 ## 6. 在 readme 中提供步驟 9 的 Nginx 設定檔
-![alt text](images/nginx_config.png.png)
+![alt text](images/nginx_config.png)
 ``` nginx
 server {
     listen 80;
@@ -47,12 +47,19 @@ server {
 }
 ```
 
+建立好設定檔後，再使用 symlink 連到 /etc/nginx/sites-enabled/
+`sudo ln -s /etc/nginx/sites-available/nginx_practice /etc/nginx/sites-enabled/`
+
 
 ## 7. Security Group 是什麼？用途為何？有什麼設定原則嗎？
 
 
+
+
+
+
 ## 8. 什麼是 sudo? 為什麼有的時候需要加上 sudo，有時候不用？
-`sudo` 是 superuser do 的簡稱，類似Windows的 **以系統管理員身份執行**，基本上如果會修改到根目錄內的東西，就需要 sudo，比如說安裝軟體、更新軟體、更改系統設定等，如果沒有就不用。
+`sudo` 是 superuser do 的簡稱，類似 Windows 的 **以系統管理員身份執行**，基本上如果會修改到根目錄內的東西，就需要 sudo，比如說安裝軟體、更新軟體、更改系統設定等，如果沒有就不用。
 
 Q: 為什麼 `sudo cd ..`，沒有效果，照理來說提高權限後，cd 應該也能做啊，但 `sudo ls` 又可以做？
 
@@ -60,14 +67,19 @@ Q: 為什麼 `sudo cd ..`，沒有效果，照理來說提高權限後，cd 應�
 
 
 
-9. Nginx 的 Log 檔案在哪裡？你怎麼找到的？怎麼看 Nginx 的 Log？
+# 9. Nginx 的 Log 檔案在哪裡？你怎麼找到的？怎麼看 Nginx 的 Log？
+Nginx 的 位於 Log /var/log/nginx/access.log，我參考了copilot 的解答
+![alt text](images/copilot_log1.png)
+![alt text](images/copilot_log2.png)
+可以使用 `sudo tail -f /var/log/nginx/access.log` 指令來列出最新的幾筆 log ，因為我們通常比較關心最新的幾筆，同時如果有新的 log 進來，會繼續監控。如果想看多一點的 log，可以用`sudo less /var/log/nginx/access.log`，terminal 會顯示部分 log 內容，可用滑鼠滾輪(或上下鍵)來查詢之前的 log。
+補充：不建議用 `sudo cat /var/log/nginx/access.log`，因為如果 log 的文字很大量的話，全部印出來時，畫面會一直在刷屏，無法閱讀，所以使用 less 而非 cat。
 
 
 
 
 
 
-10. 其他你在過程中遭遇的問題，有找到解答就記錄下來，沒有可以把問題放著，下次上課討論。如果沒有遇到任何問題，也可以回答「無」
+# 10. 其他你在過程中遭遇的問題，有找到解答就記錄下來，沒有可以把問題放著，下次上課討論。如果沒有遇到任何問題，也可以回答「無」
 
 
 
@@ -76,7 +88,9 @@ Q: 為什麼 `sudo cd ..`，沒有效果，照理來說提高權限後，cd 應�
 
 
 
-11. 列出完成本作業時參考的資料
-https://ithelp.ithome.com.tw/articles/10188498
+# 11. 列出完成本作業時參考的資料
+[Nginx](https://ithelp.ithome.com.tw/articles/10188498)
+[aws-security-groups](https://www.sentra.io/learn/aws-security-groups?form=MG0AV3)
 
-12. (optional) 如果你很初學，不放心自己的過程是否正確，可以紀錄過程，我會盡量幫忙看
+
+# 12. (optional) 如果你很初學，不放心自己的過程是否正確，可以紀錄過程，我會盡量幫忙看
