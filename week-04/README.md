@@ -14,7 +14,7 @@ Ans: pm2 像是個 **工作管理員**，管理各種 **node.js 的程式**，
 輸入 `pm2 list`，會顯示當前執行的程式。
 ![alt text](images/image.png)
 
-一般來說，要輸入 `node app.js` 才能啟動伺服器，但他會一直listen，沒辦法用這個 terminal 輸入其他的指令。
+一般來說，要輸入 `node app.js` 才能啟動伺服器，但他會一直 listen，沒辦法用這個 terminal 輸入其他的指令。
 ![alt text](images/messageImage_1728579221404.jpg)
 pm2 可以讓程式 **背景執行** ，輸入 `pm2 start app.js` 可以啟動伺服器，
 ![alt text](images/image-2.png)
@@ -22,18 +22,30 @@ pm2 可以讓程式 **背景執行** ，輸入 `pm2 start app.js` 可以啟動�
 
 
 ## 5. 步驟 9 中提到的 `proxy` 是什麼意思？為什麼要透過 Nginx 來 `proxy` 到 Express 開發的 Web Server?
-    1. 提示 `Reverse proxy` vs `Forward Proxy`
 
-    Ans: 如果只使用 Express 開啟伺服器，那麼只能在本地端通過 localhost 連進去，其他地方無法連到該伺服器。這時候就需要使用 Nginx。Nginx 的做法是，當使用者連到這個伺服器的 IP 時，請求會先到 Nginx 代理伺服器，然後 Nginx 再將請求轉發到指定的 Express 伺服器。
+Ans: 如果只使用 Express 開啟伺服器，那麼只能在本地端通過 localhost 連進去，其他地方無法連到該伺服器。這時候就需要使用 Nginx。Nginx 的做法是，當使用者連到這個伺服器的 IP 時，請求會先到 Nginx 代理伺服器，然後 Nginx 再將請求轉發到指定的 Express 伺服器。
 
 proxy 是代理的意思，分為反向代理 (Reverse proxy) 及 正向代理 (Forward Proxy)。
 - 正向代理的例子是 **VPN**，如果我們所在的區域無法存取某個伺服器，那可以先請代理伺服器幫我們發 request 至該伺服器，代理伺器器收到結果後，再傳回來給我們，常聽到的"翻牆"就是利用這個原理。此做法可以隱藏自己的 IP，因為對方只會知道代理伺服器的 IP。
 - 反向代理就是 **Nginx**，我們可以發送請求給 Nginx，Nginx 再分配到對應的伺服器，如果伺服器無法回應，可以透過配置文件來設定異常時要轉發到的伺服器，達到負載平衡的效果。
 
 
-
 ## 6. 在 readme 中提供步驟 9 的 Nginx 設定檔
-
+![alt text](images/nginx_config.png.png)
+``` nginx
+server {
+    listen 80;
+    server_name 100.24.41.116;
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+```
 
 
 ## 7. Security Group 是什麼？用途為何？有什麼設定原則嗎？
