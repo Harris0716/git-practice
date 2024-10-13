@@ -71,17 +71,17 @@ outbound: 管理哪些流量可以從我的實體發出。
 Nginx 的 位於 Log /var/log/nginx/access.log，我參考了 copilot 的解答
 ![alt text](images/copilot_log1.png)
 ![alt text](images/copilot_log2.png)
-可以使用 `sudo tail -f /var/log/nginx/access.log` 指令來列出最新的幾筆 log ，因為我們通常比較關心最新的幾筆，同時如果有新的 log 進來，會繼續監控。如果想看多一點的 log，可以用`sudo less /var/log/nginx/access.log`，terminal 會顯示部分 log 內容，可用滑鼠滾輪(或上下鍵)來查詢之前的 log。
+可以使用 `sudo tail -f /var/log/nginx/access.log` 指令來列出最新的幾筆 log ，因為我們通常比較關心最新的幾筆，同時如果有新的 log 進來，會繼續監控。如果想看多一點的 log，可以用`sudo less /var/log/nginx/access.log`，terminal 會顯示部分 log 內容，可用滑鼠滾輪(或上下鍵)來查詢之前的 log。  
 補充：不建議用 `sudo cat /var/log/nginx/access.log`，因為如果 log 的文字很大量的話，全部印出來時，畫面會一直在刷屏，無法閱讀，所以使用 less 而非 cat。
 
 
 # 10. 其他你在過程中遭遇的問題，有找到解答就記錄下來，沒有可以把問題放著，下次上課討論。如果沒有遇到任何問題，也可以回答「無」
 
-- [ ] Q1: 為什麼 `sudo cd ..`，沒有效果，照理來說提高權限後，cd 應該也能做啊，但 `sudo ls` 又可以做？
+Q1: 為什麼 `sudo cd ..`，沒有效果，照理來說提高權限後，cd 應該也能做啊，但 `sudo ls` 又可以做？
 ![alt text](images/sudo_cd.png)
 ![alt text](images/sudo_ls.png)
 
-- [ ] Q2: symlink `sudo ln -s /etc/nginx/sites-available/nginx_practice /etc/nginx/sites-enabled/`是什麼意思？
+Q2: symlink `sudo ln -s /etc/nginx/sites-available/nginx_practice /etc/nginx/sites-enabled/`是什麼意思？
 
 
 
