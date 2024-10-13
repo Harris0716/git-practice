@@ -81,7 +81,7 @@ Nginx 的 位於 Log /var/log/nginx/access.log，我參考了 copilot 的解答
 ![alt text](images/sudo_cd.png)
 ![alt text](images/sudo_ls.png)
 
-- [ ] Q2: 符號連結 `sudo ln -s /etc/nginx/sites-available/nginx_practice /etc/nginx/sites-enabled/`是什麼意思？
+- [ ] Q2: symlink `sudo ln -s /etc/nginx/sites-available/nginx_practice /etc/nginx/sites-enabled/`是什麼意思？
 
 
 
