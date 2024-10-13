@@ -52,38 +52,35 @@ server {
 
 
 ## 7. Security Group 是什麼？用途為何？有什麼設定原則嗎？
+Security Group 是虛擬防火牆，用來控制網路流量，以保護資訊安全，AWS 的 Security Group 可以管理進出的 IP, port號, 流量。  
+inbound: 管理哪些流量可以進入實體。  
+outbound: 管理哪些流量可以從我的實體發出。  
 
-
-
-
+設定原則:  
+1. Security Group 個數要盡可能越小，以減少潛在的風險
+2. 定期維護 Security Group 設定
 
 
 ## 8. 什麼是 sudo? 為什麼有的時候需要加上 sudo，有時候不用？
 `sudo` 是 superuser do 的簡稱，類似 Windows 的 **以系統管理員身份執行**，基本上如果會修改到根目錄內的東西，就需要 sudo，比如說安裝軟體、更新軟體、更改系統設定等，如果沒有就不用。
 
-Q: 為什麼 `sudo cd ..`，沒有效果，照理來說提高權限後，cd 應該也能做啊，但 `sudo ls` 又可以做？
-
-
-
 
 
 # 9. Nginx 的 Log 檔案在哪裡？你怎麼找到的？怎麼看 Nginx 的 Log？
-Nginx 的 位於 Log /var/log/nginx/access.log，我參考了copilot 的解答
+Nginx 的 位於 Log /var/log/nginx/access.log，我參考了 copilot 的解答
 ![alt text](images/copilot_log1.png)
 ![alt text](images/copilot_log2.png)
 可以使用 `sudo tail -f /var/log/nginx/access.log` 指令來列出最新的幾筆 log ，因為我們通常比較關心最新的幾筆，同時如果有新的 log 進來，會繼續監控。如果想看多一點的 log，可以用`sudo less /var/log/nginx/access.log`，terminal 會顯示部分 log 內容，可用滑鼠滾輪(或上下鍵)來查詢之前的 log。
 補充：不建議用 `sudo cat /var/log/nginx/access.log`，因為如果 log 的文字很大量的話，全部印出來時，畫面會一直在刷屏，無法閱讀，所以使用 less 而非 cat。
 
 
-
-
-
-
 # 10. 其他你在過程中遭遇的問題，有找到解答就記錄下來，沒有可以把問題放著，下次上課討論。如果沒有遇到任何問題，也可以回答「無」
 
+- [ ] Q1: 為什麼 `sudo cd ..`，沒有效果，照理來說提高權限後，cd 應該也能做啊，但 `sudo ls` 又可以做？
+![alt text](images/sudo_cd.png)
+![alt text](images/sudo_ls.png)
 
-
-
+- [ ] Q2: 符號連結 `sudo ln -s /etc/nginx/sites-available/nginx_practice /etc/nginx/sites-enabled/`是什麼意思？
 
 
 
@@ -91,6 +88,8 @@ Nginx 的 位於 Log /var/log/nginx/access.log，我參考了copilot 的解答
 # 11. 列出完成本作業時參考的資料
 [Nginx](https://ithelp.ithome.com.tw/articles/10188498)
 [aws-security-groups](https://www.sentra.io/learn/aws-security-groups?form=MG0AV3)
+[security-group](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html?form=MG0AV3) 
+[security-group-rule](https://docs.aws.amazon.com/vpc/latest/userguide/security-group-rules.html)
 
 
 # 12. (optional) 如果你很初學，不放心自己的過程是否正確，可以紀錄過程，我會盡量幫忙看
