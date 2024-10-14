@@ -87,10 +87,10 @@ Q2: symlink `sudo ln -s /etc/nginx/sites-available/nginx_practice /etc/nginx/sit
 
 
 # 11. 列出完成本作業時參考的資料
-[Nginx](https://ithelp.ithome.com.tw/articles/10188498)
-[aws-security-groups](https://www.sentra.io/learn/aws-security-groups?form=MG0AV3)
-[security-group](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html?form=MG0AV3) 
-[security-group-rule](https://docs.aws.amazon.com/vpc/latest/userguide/security-group-rules.html)
+[Nginx](https://ithelp.ithome.com.tw/articles/10188498)  
+[aws-security-groups](https://www.sentra.io/learn/aws-security-groups?form=MG0AV3)  
+[security-group](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html?form=MG0AV3)  
+[security-group-rule](https://docs.aws.amazon.com/vpc/latest/userguide/security-group-rules.html)  
 
 
 # 12. (optional) 如果你很初學，不放心自己的過程是否正確，可以紀錄過程，我會盡量幫忙看
