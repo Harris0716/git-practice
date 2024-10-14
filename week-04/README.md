@@ -81,7 +81,7 @@ Q1: 為什麼 `sudo cd ..`，沒有效果，照理來說提高權限後，cd 應
 ![alt text](images/sudo_cd.png)
 ![alt text](images/sudo_ls.png)
 
-Q2: symlink `sudo ln -s /etc/nginx/sites-available/nginx_practice /etc/nginx/sites-enabled/`是什麼意思？
+Q2: symlink `sudo ln -s /etc/nginx/sites-available/nginx_practice /etc/nginx/sites-enabled/`是什麼意思？具體的原理是什麼？
 
 
 
