@@ -1,6 +1,6 @@
 ## 1. 在 Readme 中提供 instance 的 public IP，我會連線過去檢查，所以要保持主機是一直在啟動中
 Ans: 我的 public IP 是 `100.24.41.116`，在瀏覽器的 url 輸入框輸入 IP，結果如下  
-
+http://100.24.41.116  
 ![IP](images/IP.png)
 
 ## 2. 什麼是 instance type?
