@@ -1,4 +1,5 @@
 # HW6
+(最後有寫進階題~)
 ![image](https://hackmd.io/_uploads/SJBc_WiWkx.png)
 
 ## `sudo nginx -t`
@@ -88,6 +89,8 @@ Nginx 正常運行了
 
 可以先從tmp檔，log檔，cache檔開始清理  
 但刪完後，/dev/root 也只會變99%  
+
+---
 
 ![image](https://hackmd.io/_uploads/r1i0WRsbyg.png)
 透過 sudo find / -type f -size +100M  
