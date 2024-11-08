@@ -76,7 +76,7 @@ Nginx 正常運行了
 
 
 ---
-# 補充: 
+# 補充 (進階題): 
 在修改檔案時，  
 有可能會遇到以下問題:  
 ![image](https://hackmd.io/_uploads/r1yzKLoW1e.png)
