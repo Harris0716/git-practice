@@ -12,7 +12,7 @@
 ![image](https://hackmd.io/_uploads/H1-Kc4ob1l.png)
 
 ## `sudo nginx -t`
-![image](https://hackmd.io/_uploads/BJub9Libyl.png)
+![image](https://hackmd.io/_uploads/BJub9Libyl.png)  
 此時語法問題已被排除  
 
 ---
@@ -26,7 +26,7 @@
 ![image](https://hackmd.io/_uploads/rJAKoLjWkx.png)
 
 
-我參考了Copilot提供的解法  
+我參考了 Copilot 提供的解法  
 ![image](https://hackmd.io/_uploads/S1bSusoW1e.png)
 
 80 port 已經被其他服務佔用  
@@ -51,7 +51,7 @@
 Nginx 正常運行了  
 ![image](https://hackmd.io/_uploads/SyW7GTjb1e.png)
 
-但log中還是有錯誤  
+但 log 中還是有錯誤  
 ## `cat /var/log/myweb/error.log`
 ![image](https://hackmd.io/_uploads/Hkzmmai-1x.png)
 
@@ -59,7 +59,7 @@ Nginx 正常運行了
 ![image](https://hackmd.io/_uploads/SyLdXpjW1e.png)
 
 
-我把`/var/log/myweb/error.log`的訊息貼給Copilot得到以下回覆  
+我把`/var/log/myweb/error.log`的訊息貼給 Copilot 得到以下回覆  
 但我更改權限後，問題還是沒解決  
 ![image](https://hackmd.io/_uploads/rk5pmaoWyg.png)
 
@@ -86,21 +86,21 @@ Nginx 正常運行了
 記憶體已滿，無法修改  
 
 ## `df -h`
-![image](https://hackmd.io/_uploads/ryEQaEsWJg.png)
-這個指令可以列出記憶體的分配情形  
+這個指令可以看出各個記憶體的分配狀況，/dev/root 的 use 已經 100%，需要釋放空間  
+![image](https://hackmd.io/_uploads/ryEQaEsWJg.png) 
 
-可以先從tmp檔，log檔，cache檔開始清理  
-但刪完後，/dev/root 也只會變99%  
+可以先從 tmp 檔，log 檔，cache 檔開始清理  
+但刪完後，/dev/root 也只會變 99%  
 
 ---
 
-![image](https://hackmd.io/_uploads/r1i0WRsbyg.png)
+![image](https://hackmd.io/_uploads/r1i0WRsbyg.png)  
 透過 sudo find / -type f -size +100M  
 找出容量大於 100M 的檔案  
 
 `sudo rm -f /var/log/system/largefile1 /var/log/system/largefile2 /var/log/system/largefile3 /var/log/system/largefile4`
 
-![image](https://hackmd.io/_uploads/rynUMAsZ1e.png)
+![image](https://hackmd.io/_uploads/rynUMAsZ1e.png)  
 /dev/root 的 use 成功減到 40%  
 
 
